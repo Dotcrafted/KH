@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HOSPITAL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: rgb(0,53,117);
+      background: linear-gradient(90deg, rgba(0,53,117,1) 0%, rgba(121,9,94,1) 50%, rgba(44,0,127,1) 100%);
+      text-align: center;
+      margin-top: 100px;
+    }
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #382dd4;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2> 𝐊-𝐇 <br> Login </h2>
+    <form id="loginForm" onsubmit="validateForm(); return false;">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <input type="submit" value="Login">
+    </form>
+    <p id="errorMessage" style="color: red; display: none;">Invalid username or password.</p>
+  </div>
+
+  <script>
+    function validateForm() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Fixed user credentials
+      var validUsername = "Siddharth"; // Replace 'yourUsername' with your fixed username
+      var validPassword = "siddu1234"; // Replace 'yourPassword' with your fixed password
+
+      if (username === validUsername && password === validPassword) {
+        // Redirect to your existing HTML page upon successful login
+        window.location.href = 'm.html';
+      } else {
+        document.getElementById('errorMessage').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
